@@ -13,13 +13,13 @@ REGOLE
   Crea una variabile chiamata "sum" e assegnaci il risultato della somma tra i valori 10 e 20.
 */
 const sum = 10 + 20
-console.log("EXERCISE A:", sum)
+console.log("EXERCISE A:", sum) //verified
 
 /* ESERCIZIO B
   Crea una variabile chiamata "random" e assegnaci un numero casuale tra 0 e 20 (deve essere generato dinamicamente a ogni esecuzione).
 */
 const random = Math.floor(Math.random() * 21)
-console.log("EXERCISE B:", random)
+console.log("EXERCISE B:", random) //verified
 
 /* ESERCIZIO C
   Crea una variabile chiamata "me" e assegnaci un oggetto contenente le seguenti proprietà: name = il tuo nome, surname = il tuo cognome, age = la tua età.
@@ -29,62 +29,119 @@ const me = {
   surname: "Farinosi",
   age: 27,
 }
-console.log("EXERCISE C:", me)
+console.log("EXERCISE C:", me) //verified
 
 /* ESERCIZIO D
   Crea del codice per rimuovere programmaticamente la proprietà "age" dall'oggetto precedentemente creato.
 */
 delete me.age
-console.log("EXERCISE D:", me)
+console.log("EXERCISE D:", me) //verified
 
 /* ESERCIZIO E
   Crea del codice per aggiungere programmaticamente all'oggetto precedentemente creato un array chiamato "skills", contenente i linguaggi di programmazione che conosci.
 */
 me.skills = ["JavaScript"]
-console.log("EXERCISE E:", me)
+console.log("EXERCISE E:", me) //verified
 
 /* ESERCIZIO F
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
 */
 me.skills.push("Python")
-console.log("EXERCISE F:", me)
+console.log("EXERCISE F:", me) //verified
 
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
 */
 me.skills.pop()
-console.log("EXERCISE G:", me)
+console.log("EXERCISE G:", me) //verified
 
 // Funzioni
 
 /* ESERCIZIO 1
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
+const dice = function () {
+  number = Math.ceil(Math.random() * 6)
+  return number
+}
+
+console.log("EXERCISE 1:", dice()) //verified
 
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
+const whoIsBigger = function (a, b) {
+  if (a > b) {
+    console.log(`EXERCISE 2: ${a} is bigger`)
+  } else {
+    console.log(`EXERCISE 2: ${b} is bigger`)
+  }
+}
+
+whoIsBigger(13, 9) //verified
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
+const splitMe = function (phrase) {
+  const arr = phrase.split(" ")
+  return arr
+}
+
+phrase = "I would love to have some tea"
+console.log("EXERCISE 3:", splitMe(phrase)) //verified
 
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+const deleteOne = function (string, boolean) {
+  if (boolean) {
+    const newString = string.slice(1)
+    return newString
+  } else {
+    const newString1 = string.slice(0, -1)
+    return newString1
+  }
+}
+
+console.log("EXERCISE 4:", deleteOne("Hello world", 4 > 6)) //verified
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
+const onlyLetters = function (cats) {
+  let string = cats
+    .split("")
+    .filter((character) => isNaN(character) || character === " ")
+    .join("")
+  return string
+}
+
+console.log("EXERCISE 5:", onlyLetters("I love my 2 cats")) //verified
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
+//FIRST IDEA
+//if input type === email true?
+//SECOND IDEA
+// if includes(@) ? very generic though
+const isThisAnEmail = function (string) {
+  let letters = string.split("")
+  if (letters.includes("@")) {
+    //maybe if this is true put into another array and then split by @, take the second half and compare to real email domains
+    return "true"
+  } else {
+    return "false"
+  }
+}
+
+console.log("EXERCISE 6:", isThisAnEmail("aifhjyftiy@hjfk")) //no idea how to go further than this. Maybe checking if what is after the "@" is either a gmail.com, or any valid domain. I'll come back if I have time
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollDice" che riceve un numero come parametro.
@@ -98,6 +155,21 @@ console.log("EXERCISE G:", me)
       values: [3, 3, 4]
   }
 */
+const rollDice = function (num) {
+  let obj = {
+    sum: 0,
+    values: []
+  }
+
+  for (let i = 0; i < num; i++) {
+    const result = dice()   
+    obj.values.push(result)      
+    obj.sum += result    
+  }
+
+  return obj
+}
+console.log("EXERCISE 8:",rollDice(4))//verified
 
 // Arrays & Oggetti
 
