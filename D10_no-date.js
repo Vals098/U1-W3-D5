@@ -408,16 +408,42 @@ const searchByTitle = function (string) {
   return searchedMovies
 }
 
-console.log(searchByTitle("Avengers")) //verified
+console.log("EXERCISE 17:", searchByTitle("Avengers")) //verified
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
+const searchAndDivide = function (string) {
+  let obj = {
+    match: [],
+    unmatch: [],
+  }
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title.includes(string)) {
+      obj.match.push(movies[i])
+    } else {
+      obj.unmatch.push(movies[i])
+    }
+  }
+
+  return obj
+}
+
+console.log("EXERCISE 18:", searchAndDivide("Avengers"))
 
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+const removeIndex = function (num) {
+  movies.splice(num, 1)
+  //this removes the the movie that stands in the index position represented by num.
+  //if you wanted the position as in "human" counting thenn it would have been
+  // movies.splice(num-1,1)
+  //this way num = 1 equals to the first element (in human terms)
+  return movies
+}
+console.log("EXERCISE 19:", removeIndex(1))
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -502,6 +528,7 @@ const addTest = function () {
   ***
 
 */
+const halfTree = function (num) {}
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
