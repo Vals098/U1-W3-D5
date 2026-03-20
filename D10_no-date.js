@@ -134,7 +134,7 @@ console.log("EXERCISE 5:", onlyLetters("I love my 2 cats")) //verified
 const isThisAnEmail = function (string) {
   let letters = string.split("")
   if (letters.includes("@")) {
-    //maybe if this is true put into another array and then split by @, take the second half and compare to real email domains
+    //maybe if this is true put into another array and then sliced by @, take the second half and compare to real email domains
     return "true"
   } else {
     return "false"
@@ -528,7 +528,44 @@ const addTest = function () {
   ***
 
 */
-const halfTree = function (num) {}
+//FIRST IDEA  gives one * per row
+
+//const halfTree = function (num) {
+//  let asterisc = ""
+//  for (i = 0; i < num; i++) {
+//    asterisc += "*" + "\n"
+//  }
+//  return asterisc
+//}
+//
+//console.log(halfTree(5))
+//two cicles?
+
+const halfTree = function (num) {
+  let asteriscTree = ""
+
+  // first cicle fot number of rows:
+  for (let i = 1; i <= num; i++) {
+    //to get the right amount of rows:
+    //start from 1
+    //stop when equal to num
+    let row = ""
+
+    //second cicle for the astriscs on every row:
+    for (let j = 0; j < i; j++) {
+      //start when i=1 --> j=0
+      //stop right before i
+      row += "*"
+      //add an asterist at every iteration
+    }
+    asteriscTree += row + "\n"
+    //break the line every time
+  }
+
+  return asteriscTree
+}
+
+console.log(halfTree(11)) //WORKKKKKKKSS
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -541,10 +578,38 @@ const halfTree = function (num) {}
   *****
 
 */
+//Tried, I'm beat. Can't think anymore
+const tree = function (num) {
+  let asteriscTree = ""
+
+  // first cicle fot number of rows:
+  for (let i = 1; i <= num; i++) {
+   
+    let row = ""
+
+    for (let j = 0; j < i; j++) {
+      
+      row += (2 * i - 1)
+      
+    }
+    asteriscTree += row + "\n"
+  }
+
+  return asteriscTree
+}
+
+console.log(halfTree(6)) 
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+
+//FIRST IDEA
 //const isItPrime = function (num){
 //  if (num%num === 0 && num%1 === 0 )
 //}
+//gets all the numbers
+
+const isItPrime = function (num){
+
+}
