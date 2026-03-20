@@ -610,6 +610,10 @@ console.log(halfTree(6))
 //}
 //gets all the numbers
 
-const isItPrime = function (num){
-
-}
+//SECOND IDEA
+//const isItPrime = function (num){
+//  let x = ???? //all the numbers???//
+//if (num%x !== 0 && num%num === 0 && num%1 === 0){
+//  return "true"
+//}
+//}
