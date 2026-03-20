@@ -193,7 +193,7 @@ obj = {
 
 string = "surname"
 
-console.log("EXERCISE 11:", deleteProp(obj, "surname"))
+console.log("EXERCISE 11:", deleteProp(obj, "surname")) //verified
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
@@ -330,7 +330,7 @@ const newestMovie = function () {
   return newest
 }
 
-console.log("EXERCISE 12:", newestMovie().Title)
+console.log("EXERCISE 12:", newestMovie().Title) //verified
 
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
@@ -339,7 +339,7 @@ const countMovies = function () {
   console.log("EXERCISE 13:", movies.length)
 }
 
-countMovies()
+countMovies() //verified
 
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
@@ -352,7 +352,7 @@ const onlyTheYears = function () {
   return yearsArr
 }
 
-console.log("EXERCISE 14:", onlyTheYears())
+console.log("EXERCISE 14:", onlyTheYears()) //verified
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
@@ -365,7 +365,7 @@ const onlyInLastMillennium = function () {
   }
   return lastMill
 }
-console.log("EXERCISE 15:", onlyInLastMillennium())
+console.log("EXERCISE 15:", onlyInLastMillennium()) //verified
 
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
@@ -377,7 +377,7 @@ const sumAllTheYears = function () {
   }
   return sum
 }
-console.log("EXERCISE 16:", sumAllTheYears())
+console.log("EXERCISE 16:", sumAllTheYears()) //verified
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
@@ -408,7 +408,7 @@ const searchByTitle = function (string) {
   return searchedMovies
 }
 
-console.log(searchByTitle("Avengers"))
+console.log(searchByTitle("Avengers")) //verified
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
@@ -424,30 +424,70 @@ console.log(searchByTitle("Avengers"))
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
+const selectId = function () {
+  return document.getElementById("container")
+}
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
+const selectTag = function () {
+  return document.getElementsByTagName("td")
+}
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+const text = function () {
+  const rightTag = document.querySelectorAll("td")
+  rightTag.forEach((td) => console.log(td.innerText))
+}
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 
+//CASE 1 (my choice)
+//in this case I would have a css sheet with say this property:
+//.selectedLink {
+//background-color: red;
+//}
+//and of course before that the html <a> tags i need to act on with the class="selectedLink"
+const redBackground = function () {
+  const rightTag = document.querySelectorAll("a")
+  rightTag.forEach((a) => a.classList.add("selectedLink"))
+}
+
+//CASE 2
+//inline styling using js
+const redBackground2 = function () {
+  const rightTag = document.querySelectorAll("a")
+  rightTag.forEach((a) => (a.style.backgroundColor = "red"))
+}
+
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+//adding a new li only in memory and not yet visible on the page, untill I give it a value
+const addElement = function () {
+  const newLi = document.createElement("li")
+  document.getElementById("myList").appendChild(newLi)
+}
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
+const emptyList = function () {
+  const toBeRemoved = (document.getElementById("myList").innerHTML = "")
+}
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+const addTest = function () {
+  const rightTag = document.querySelectorAll("tr")
+  rightTag.forEach((tr) => tr.classList.add("test"))
+}
 
 // [EXTRA] JS Avanzato
 
